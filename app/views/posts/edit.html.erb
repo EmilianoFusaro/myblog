@@ -1,0 +1,52 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<!--<header class="intro-header" style="background-image: url('img/post-bg.jpg')">-->
+<header class="intro-header header2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1><%= @post.title %></h1>
+                    <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                    <span class="meta">
+                    	<%= link_to "back" , post_path(@post) %> |
+                        <%= link_to "delete", post_path(@post) , method: :delete, data: {confirm: "Are You Sure?"} %>                       
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">               
+                <%= render "form" %>
+            </div>
+        </div>
+    </div>
+ </article>
+
+
+
+
+<!-- <h1>This is the edit page for <%#=params[:id]%> <%#=link_to "back" , posts_path %></h1> -->
+<%#@post.each do |post| %>
+<!--<div class="panel">-->
+	<!--<p><%#=link_to post.title , post_path(post) %></p>-->
+<!--</div>-->
+<%#end %>
+<!--
+<div class="form">
+	<%#= form_for @post do |f| %><br>
+	  <%#= f.label :title %><br>
+	  <%#= f.text_field :title %><br>
+	  <%#= f.label :body %><br>
+	  <%#= f.text_area :body %><br>
+	  <%#= f.submit %>
+	<%# end %>
+</div>
+-->
+<%#= render "form" %>

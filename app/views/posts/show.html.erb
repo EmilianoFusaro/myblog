@@ -1,0 +1,107 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<!--<header class="intro-header" style="background-image: url('img/post-bg.jpg')">-->
+<header class="intro-header header2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1><%= @post.title %></h1>
+                    <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                    <span class="meta">
+                    	<%= link_to "edit" , edit_post_path(@post) %> |
+                        <%= link_to "delete", post_path(@post) , method: :delete, data: {confirm: "Are You Sure?"} %>                       
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>
+                <%= @post.body %>
+                </p>
+                <%if @post.comments.count > 0 %> 
+                  <hr>
+                  <h4>All Comments:</h4>
+                  <hr>
+                  <%= render @post.comments.order("created_at DESC") %> 
+                <%end%>
+                
+            </div>
+        </div>
+    </div>
+ </article>
+
+
+ <!-- Main Content -->
+<div class="lightbg">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h2>Leave a Comment:</h2>
+            <%= form_for [@post, @post.comments.build] do |f| %>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <%= f.label :name %>
+                        <%= f.text_field :name , class: "form-control", placeholder: "Name"%>
+                        <p class="help-block text-danger"></p>
+                        <!-- <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name."> -->
+                    </div>
+                </div>        
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <%= f.label :body %>
+                        <%= f.text_area :body , class: "form-control", placeholder: "Comment"%>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <%= f.submit "create comment", class: "btn btn-default" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- this is the show template <%#= params[:id] %><br> -->
+<!--gino: <%#= @gino %><br>-->
+<!--post: <%#= @post.title if @post %><br>-->
+
+<!-- <p> -->
+<%#= @post.title %>
+<!-- </p> -->
+<!-- <p> -->
+<%#= @post.body %>
+<!-- </p> -->
+
+<!-- <%#= link_to "edit" , edit_post_path(@post) %> |
+<%#= link_to "delete", post_path(@post) , method: :delete, data: {confirm: "Are You Sure?"} %>  |
+<%#= link_to "back" , posts_path %>  -->
+
+
+<!-- <h2>All Comments:</h2> -->
+<!-- itera il contenuto -->
+<%#= render @post.comments.order("created_at DESC") %> 
+<%#= render @post.comments %> 
+
+<!-- <h2>Leave a Comment:</h2> -->
+<%#= form_for [@post, @post.comments.build] do |f| %>
+<!-- questo non funziona-->
+<%#= form_for [@post.comments] do |f| %>
+  <%#= f.label :name %><!-- <br> -->
+  <%#= f.text_field :name %><!-- <br> -->
+  <%#= f.label :body %><!-- <br> -->
+  <%#= f.text_area :body %><!-- <br> -->
+  <%#= f.submit %>
+ <%# end %>

@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%= comment.name %></div>
+  <div class="panel-body">
+    <%= comment.body %>
+    <p><%= link_to "delete", [comment.post, comment], method: :delete, data: {confirm: "are you sure ?"}  %></p>
+  </div>
+</div>
+
+
+
+<!-- <div class="comment"> -->
+<!-- <p> -->
+<!-- <strong>Comment Name: </strong><br> -->
+<%#= comment.name %>
+<!-- </p> -->
+<!-- <p> -->
+<!-- <strong>Comment Body: </strong><br> -->
+<%#= comment.body %>
+<!-- </p> -->
+<!-- cancella direttamente il post -->
+<%#= link_to "delete", [comment.post], method: :delete, data: {confirm: "are you sure ?"}  %>
+<%#= link_to "delete", [comment.post, comment], method: :delete, data: {confirm: "are you sure ?"}  %>
+<!-- lo cancella lo stesso anche con questa sintassi -->
+<%#= link_to "delete", [@post, comment], method: :delete, data: {confirm: "are you sure ?"}  %>
+<!-- </div> -->

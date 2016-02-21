@@ -1,0 +1,61 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<!--<header class="intro-header" style="background-image: url('img/home-bg.jpg')">-->
+<!-- img sopra viene inserita in clean-blog.css -->
+<!-- background-image: url("home-bg.jpg") !important; -->
+<header class="intro-header header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading">
+					<h1>Emiliano Blog</h1>
+					<hr class="small">
+					<span class="subheading">Prova Di Scrittura Rails Blog</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<% @posts.each do |post| %>
+			<div class="post-preview">			
+				<a href="post.html">
+					<h2 class="post-title">
+						<%= link_to post.title, post_path(post) %>
+					</h2>
+<!-- 					<h3 class="post-subtitle">
+						Problems look mighty small from 150 miles up
+					</h3>-->				
+				</a>
+				<%= link_to "edit", edit_post_path(post) %>
+				<%= link_to "delete", post_path(post) , method: :delete, data: {confirm: "Are You Sure?"} %>
+			</div>
+			<hr>
+			<% end %>	
+		</div>
+	</div>
+</div>
+
+
+<!--<h1>Hi Guys, Welcome to my Blog. <%#= link_to "New_Post", new_post_path %></h1>-->
+<!---->
+<!--<h1>Hi Guys, Welcome to my Blog. <%#= link_to "New_Post" ,posts_new_path %></h1>-->
+<%# @posts.each do |post| %>
+<!--<p><%#= link_to post.title, show_path(post) %></p>-->
+<!-- <div class="panel">
+	<p><%#= link_to post.title, post_path(post) %></p>
+	<p>
+		<%#= link_to "edit", edit_post_path(post) %>
+		<%##= link_to "delete", post_path(post) , method: :delete %> 
+		<%#= link_to "delete", post_path(post) , method: :delete, data: {confirm: "Are You Sure?"} %> 
+		SINTASSI ABBREVIATA LO CANCELLA LO STESSO
+		<%#= link_to "delete", post , method: :delete, data: {confirm: "Are You Sure?"} %> 
+	</p>
+	<p><%#= post.body %></p>-
+</div>
+<%# end %>
+ -->

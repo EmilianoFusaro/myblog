@@ -1,0 +1,15 @@
+.dog_image {
+	width: 200px;
+	height:200px;
+	background-image: url("dog4.jpg");  
+}
+
+/*
+.panel {
+	background-color: lightgrey;
+	padding: 15px 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+*/
+
